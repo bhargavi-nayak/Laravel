@@ -1,6 +1,3 @@
-# Laravel
-Online notice board and complaint management system is a web application which is built for the student and the head of the department to maintain the notices and the feedbacks provided by the student related to particular department. We have used Laravel- PHP framework for this project.
-
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
