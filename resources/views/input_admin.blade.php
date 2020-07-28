@@ -1,41 +1,35 @@
 <html>
 <title>Register</title>
-
-
 <head>
-<title>Register</title>
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-  <script type="text/javascript">
+  <script>
   function CheckDept(val){
   //var element=document.getElementById(val);
   //document.write(val)
   //ocument.write(element)
   document.getElementById("dept").value = val;
 }
-
-</script> 
+</script>
 <style>
-  body
-  {
-    background-color: #4f8a8b;
-  }
-  
 .container{
     border-radius:10px;
-    width: 700px;
-
+    background-color:lightblue;
 }
 th {
-    color:white;
+    color:gray;
+    font-style:italic;
+}
+header{
+    font-style:italic;
+    color:gray;
 }
 a{
-    color:white;
-    background-color: green;
+    color:green;
 }
 td{
     color:white;
@@ -48,17 +42,7 @@ input{
 }
 button{
 }
-
-h3
-{
-  background-color: black;
-  width: 700px;
-  color: white;
-  border-radius: 10px;
-  margin-top: 20px;
-}
 </style>
-
 <script>
     var el_down = document.getElementById("admin_id"); 
     /* Function to generate combination of password */ 
@@ -96,18 +80,11 @@ h3
 </script>
 </head>
 <body>
-  <center><h3 align="center">PLEASE REGISTER HERE &nbsp &nbsp<image src="re.png" width="100px"/></h3>
-  </center>
-  
-<div class="container p-4 bg-dark text-white">
-<div class='col-md-4'>
+<div class='container'>
+<div class='row'>
+<div class='col-sm-4'>
 </div>
-
-
-
-
-
-<div class='col-md-4'>
+<div class='col-sm-4'>
 <form action='/display_admin' method='post'>
 <table align='center'>
 @csrf

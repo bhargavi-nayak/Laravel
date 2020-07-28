@@ -1,11 +1,6 @@
 <html>
 <head>
 <style>
-	body
-	{
-		background-color: #342b38;
-	}
-
 table{
 	
 	border-collapse:collapse;
@@ -31,17 +26,9 @@ tbody tr:hover
 {
 	background-color:#da3559;
 }
-h1
-{
-	background-color: black;
-	color: white;
-	width: 750px;
-	border-radius: 10px;
-}
 </style>
 </head>
-<body><center><h1>ADMINS</h1></center>
-	
+<body>
 <table cellpadding="15pt" border="5px" align="center">
 <tr>
 <th>Name</th>

@@ -7,10 +7,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <style>
-  body
-  {
-    background-color: #4f8a8b;
-  }
 .container{
     border-radius:10px;
 }
@@ -35,12 +31,6 @@ input{
 }
 button{
 }
-h3
-{
-  background-color: #07031a;
-  width:500px;
-  color: white;
-}
 </style>
 </head>
 
@@ -52,7 +42,7 @@ $user = DB::table('users1s')->where('id',"$id")->first();
 <body>
 <form action='/update_user/{{$id}}' method='post'>
 @csrf
-<center><h3>User Details</h3></center>
+<center><header><h3>User Details</h3></header></center>
 <table align='center' cellpadding='10'>
 <tr><th>Name</th><td><input type='text' value="{{$user->name}}" name='name'/></td></tr>
 <tr><th>Email</th><td><input type='email' value="{{$user->email}}" name='email'/></td></tr>
@@ -60,8 +50,7 @@ $user = DB::table('users1s')->where('id',"$id")->first();
 <tr><th>Phone</th><td><input type='tel' value="{{$user->phone}}" name='phone'/></td></tr>
 <tr><th>Password</th><td><input type='password' value="{{$user->password}}" name='password'/></td></tr>
 <tr><td><input type='submit' value='Submit'/></td></tr>
-</table><center>click on submit to upadate your profile</center>
-
+</table>
 </form>
 </body>
 </html>

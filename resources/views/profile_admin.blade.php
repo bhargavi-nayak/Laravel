@@ -7,18 +7,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <style>
-  body
-  {
-    background-color: #f5f0e3;
-  }
 .container{
     border-radius:10px;
-}
-table
-{
-  background-color: #1b262c;
-  width: 400px;
-  border-radius: 10px;
 }
 th {
     color:white;
@@ -39,14 +29,6 @@ input{
     padding:10px;
     margin:5px;
 }
-h3
-{
-  background-color: black;
-  width: 400px;
-  border-radius: 10px;
-  margin-top: 20px;
-  height: 50px;
-}
 button{
 }
 </style>
@@ -62,8 +44,8 @@ $user = DB::table('admins')->where('id',"$id")->first();
 
 <form action='/update_admin/{{$id}}' method='post'>
 @csrf
-<center><header><h3>ADMIN DETAILS &nbsp</h3></header></center>
-<br><br>
+<center><header><h3>User Details</h3></header></center>
+
 <table align='center' cellpadding='10'>
 <tr><th>Name</th><td><input type='text' value="{{$user->name}}" name='name'/></td></tr>
 <tr><th>Email</th><td><input type='email' value="{{$user->email}}" name='email'/></td></tr>
@@ -72,9 +54,6 @@ $user = DB::table('admins')->where('id',"$id")->first();
 <tr><th>Password</th><td><input type='password' value="{{$user->password}}" name='password'/></td></tr>
 <tr><td><input type='submit' value='Submit'/></td></tr>
 </table>
-<marquee><b>
-<p style="color: black;">click the submit button to update the details</p></b>
-</marquee>
 </form>
 </body>
 </html>

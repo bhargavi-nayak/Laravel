@@ -8,17 +8,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <style>
-  body
-  {
-    background-image: url("add.jpg");
-    background-repeat: repeat;
-    width:100%;
-  }
 .container{
     border-radius:10px;
     background-color:lightblue;
-    width: 350px;
-    margin-top: 100px;
 }
 th {
     color:gray;
@@ -36,24 +28,15 @@ td{
 }
 input{
     border-radius:10px;
-    width:200px;
+    width:100%;
     padding:10px;
     margin:5px;
-    border: 4px solid black;
 }
 button{
 }
-h2
-{
-  background-color: black;
-  width:300px;
-}
 </style>
 </head>
-<body><center>
-  <h2 style="color: white;margin-top: 20px;">Admin Login &nbsp<image src="ad2.jpg" width="70px"/></h2>
-  </center>
-  
+<body>
 <div class='container'>
 <div class='row'>
 <div class='col-sm-4'>
@@ -62,7 +45,7 @@ h2
 <form action="/admin_login" method='post'>
 @csrf
 <table align='center'>
-
+<tr><th>Admin Login</th></tr>
 @csrf
 <tr><td><input type='text' name='loginid' placeholder='UserName'/></td></tr>
 <tr><td><input type='password' name='pass' placeholder='Password'/></td></tr>

@@ -1,14 +1,6 @@
 <html>
-<?php
-use Illuminate\Support\Facades\DB;
-
-?>
 <head>
 <style>
-	body
-	{
-		background-color: #8ccbbe;
-	}
 table{
 	
 	border-collapse:collapse;
@@ -34,24 +26,9 @@ tbody tr:hover
 {
 	background-color:#da3559;
 }
-h1
-{
-	background-color: #07031a;
-	color: white;
-	width:400px;
-}
-a
-{
-	background-color: white;
-	color:green;
-	border-radius: 10px;
-}
 </style>
 </head>
 <body>
-	<center>
-		<div style="background-color: #342b38; width: 500px;border-radius: 10px;margin-top: 100px;">
-  <h1 > Department News</h1>
 <table cellpadding="15pt" border="5px" align="center">
 <tr>
 <th>Title</th>
@@ -67,10 +44,7 @@ a
 <td>{{$notices->links}}</td>
 </tr>
 @endforeach
-
-</center>
-</div><center><br><br>
-
-
+</table>
+</form>
 </body>
 </html>

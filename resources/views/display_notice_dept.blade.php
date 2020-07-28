@@ -7,10 +7,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <style>
-  body
-  {
-    background-color: #1f4068;
-  }
 .container{
     border-radius:10px;
 }
@@ -34,20 +30,6 @@ input{
     margin:5px;
 }
 button{
-}
-h2
-{
-  background-color: #07031a;
-  color: #4f8a8b;
-  width:400px;
-}
-h3
-{
-  color:white;
-  background-color: black;
-  width:300px;
-  border-radius: 10px;
-  height: 50px;
 }
 </style>
 </head>

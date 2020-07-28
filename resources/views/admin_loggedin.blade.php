@@ -12,10 +12,6 @@ $admin = DB::table('admins')->where('id',"$id")->first();
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <style>
-  body
-  {
-background-color: #8ccbbe;
-  }
 label{
     height:100%;
     width:100%;
@@ -46,8 +42,6 @@ section button{
 }
 h3{
     margin:30px;
-    background-color: black;
-    width: 300px;
     }
 footer{
     background-color:black;
@@ -59,43 +53,22 @@ header h3{
 }
 img{
 }
-.abc
-{
-  background-color: #584153;
-  font-style: 
-   border-radius: 20px;
-   font-size: 20px;
-   width:500px;
-
-
-}
-.abc2
-{
-  background-color: #584153;
-  font-style: 
-   border-radius: 20px;
-   font-size: 20px;
-   width:700px;
-
-
-}
-
 </style>
 </head>
 <body>
-<marquee><h2><b style="background:gray; color:black;"> DEPARTMENT:{{$admin->Department}}</h2></b></marquee>
+<marquee> DEPARTMENT:{{$admin->Department}}</marquee>
 <header>
 <center><h3>Online Notice board</h3></center>
 
 <!-- add bootstrap image movement -->
-<nav class="navbar navbar-expand-sm bg-#8ccbbe">
+<nav class="navbar navbar-expand-sm bg-light">
 
   <!-- Links -->
   <ul class="navbar-nav">
   
     <li class="nav-item">
     <div class="dropdown">
-        <image src="stu.jpg" width="50px"/>&nbsp <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
             {{$admin->name}}
         </button>
         <div class="dropdown-menu">
@@ -113,7 +86,6 @@ img{
   <div class="row">
     <div class="col-sm-2">
     <div class="btn-group">
-      <image src="news.jpg" width="70px"/>&nbsp
     <button type="button" style='width:100px;height:35px;' class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
     Categories</button>
     <div class="dropdown-menu">
@@ -126,13 +98,12 @@ img{
 <div class='col-sm-8'>
 
 <marquee>
-<p style='font-style:italic;color:red;'><image src="co.jpg" width="80px"/>&nbsp<b> *Be updated about COVID-19 with AarogyaSethu App</b> &nbsp<image src="ar.jpg" width="80px"/>&nbsp</p>
+<p style='font-style:italic;color:red;'>*Be updated about COVID-19 with AarogyaSethu App</p>
 </marquee>
 
 </div>
 <div class='col-sm-2'>
 <a class='btn btn-primary' href='/complaint_view/{{$id}}' name='complaint'>Complaints</a>
-<image src="comp.png" width="50px"/>&nbsp
 </div>
 </div>
 </div>
@@ -141,15 +112,15 @@ img{
 <div class='container'>
 <div class='row'>
 <div class='col-sm-4'>
-<h2>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Contacts</h2><i>
-<p class="abc">Phone:+91-8258-281263 / 281264 &nbsp &nbsp &nbsp &nbsp<br>
-Website:<a href="www.nmamit.nitte.edu.in">Click here</a></p></i>
+<h5>Contacts</h5>
+<p>Phone:+919686034913<br>
+Email:<a href="mailto:hbhargavi.nayak9499@gmail.com">My mail</a></p>
 </div>
 <div class='col-sm-4'>
-<h2>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  Address</h2>
-<p class="abc2"><i>NMAM Institute of Technology, Nitte-574110</br>
-   Karkala Taluk,Udupi dist,Karnataka</i>
-</p> 
+<h5>Address</h5>
+<p>NMAM Institute of Technology, Nitte 574110</br>
+Information Science & Engineering Department
+5th floor Academic Block
 </div>
 </div class='col-sm-4'>
 </div>

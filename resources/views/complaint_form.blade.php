@@ -1,8 +1,5 @@
 <html>
-<?php 
-use Illuminate\Support\Facades\DB;
 
-?>
 <head>
 <title>Register</title>
 <meta charset="utf-8">
@@ -21,14 +18,8 @@ use Illuminate\Support\Facades\DB;
 
 </script> 
 <style>
-  body
-  {
-    background-color: #85a392;
-  }
 .container{
-    margin-top: 20px;
     border-radius:10px;
-    width: 500px;
 }
 th {
     color:white;
@@ -45,10 +36,6 @@ input{
     padding:10px;
     margin:5px;
 }
-h1,p
-{
-  color: yellow;
-}
 button{
 }
 </style>
@@ -63,14 +50,12 @@ button{
 
 
 <div class='col-md-4'>
-  <h1>Have any complaints?</h1>
- <p>post your questions here</p>
 <form action='/submit_complaint' method='post'>
 
 @csrf
 
 <table align='center'>
-
+<tr><th>User Registraion</th></tr>
 
 <tr><td><input type='text' name='name' placeholder='Student Name'/></td></tr>
 <tr><td>

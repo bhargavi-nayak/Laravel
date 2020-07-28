@@ -16,16 +16,10 @@
 }
 </script>
 <style>
-  body
-  {
-    background-color: #342b38;
-  }
 .container{
     border-radius:10px;
     background-color:lightblue;
-    width: 700px;
 }
-
 th {
     color:gray;
     font-style:italic;
@@ -48,13 +42,6 @@ input{
 }
 button{
 }
-h1
-{
-color: black;
-background-color: #4cd3c2;
-width: 700px;
-border-radius: 10px;
-}
 </style>
 
 </head>
@@ -63,23 +50,19 @@ use Illuminate\Support\Facades\DB;
 //echo "{$id}";
 $user = DB::table('admins')->where('Department',"$department")->first();
 $dept=$user->Department;
-$us = DB::table('admins')->where('id',"$id")->first();
 
 ?>
-<body><center>
-  <h1> NOTICE</h1><br><br>
-</center>
+<body>
 <div class='container'>
 <div class='row'>
 <div class='col-sm-4'>
 </div>
 
 <div class='col-sm-4'>
-
-<form action='/notice_store/{{$us->id}}' method='post'>
+<form action='/notice_store' method='post'>
 <table align='center'>
 @csrf
-
+<tr><th>Important notice</th></tr>
 <tr><td><input type='text'id='title' name='title' placeholder='Title'/></td></tr>
 
 <tr><td><input type='url' name='link' placeholder='Link'/></td></tr>

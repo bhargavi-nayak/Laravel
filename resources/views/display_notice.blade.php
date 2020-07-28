@@ -1,15 +1,6 @@
-
 <html>
-<?php 
-use Illuminate\Support\Facades\DB;
-?>
-
 <head>
 <style>
-	body
-	{
-		background-color: #8ccbbe;
-	}
 table{
 	
 	border-collapse:collapse;
@@ -35,32 +26,9 @@ tbody tr:hover
 {
 	background-color:#da3559;
 }
-h1
-{
-	background-color: #07031a;
-	color: #4f8a8b;
-	width:400px;
-}
-a
-{
- background-color:#342b38 ;
- color: white;
-
-}
-h1
-{
-	background-color: black;
-	color: white;
-	width: 300px;
-	border-radius: 10px;
-	height: 50px;
-}
 </style>
 </head>
-<body><center>
-	<div style="background-color: #342b38; width: 500px;border-radius: 10px;margin-top: 100px;">
-	<h1 > GENERAL NEWS</h1>
-
+<body>
 <table cellpadding="15pt" border="5px" align="center">
 <tr>
 <th>Title</th>
@@ -78,12 +46,7 @@ h1
 
 </tr>
 @endforeach
-</table><br><br></div></center><br><br><br><center>
-
-
-</center>
-
+</table>
+</form>
 </body>
-
-
 </html>

@@ -18,22 +18,14 @@
 
 </script> 
 <style>
-  body
-  {
-    background-color: #4f8a8b;
-  }
-  
 .container{
     border-radius:10px;
-    width: 700px;
-
 }
 th {
     color:white;
 }
 a{
-    color:white;
-    background-color: green;
+    color:green;
 }
 td{
     color:white;
@@ -46,21 +38,9 @@ input{
 }
 button{
 }
-
-h3
-{
-  background-color: black;
-  width: 700px;
-  color: white;
-  border-radius: 10px;
-  margin-top: 20px;
-}
 </style>
 </head>
 <body>
-  <center><h3 align="center">PLEASE REGISTER HERE &nbsp &nbsp<image src="re.png" width="100px"/></h3>
-  </center>
-  
 <div class="container p-4 bg-dark text-white">
 <div class='col-md-4'>
 </div>
@@ -75,7 +55,7 @@ h3
 @csrf
 
 <table align='center'>
-
+<tr><th>User Registraion</th></tr>
 
 <tr><td><input type='text' name='name' placeholder='UserName'/></td></tr>
 <tr><td><input type='text' name='usn' placeholder='USN'/></td></tr>
@@ -83,7 +63,7 @@ h3
 <tr><td>
 
 <select id="department"  placeholder='Department' onchange='CheckDept(this.value);'>
-	<option id="None">-- Department --</option>
+	<option id="None">-- Select --</option>
 	<option id="ID1">BT</option>
 	<option id="ID2">CSE</option>
 	<option id="ID3">Civil</option>
@@ -100,7 +80,7 @@ h3
 <tr><td><input type='password' name='password' placeholder='Password'/></td></tr>
 <tr><td><input type='password' name='passconf' placeholder='Confirm Password'/></td></tr>
 <tr><td><input type='submit' value='Submit'/></td></tr>
-<tr><td>Go to <a href='/logins'>Login</a></td></tr>
+<tr><td>Go to <a href='/login'>Login</a></td></tr>
 </table>
 </form>
 

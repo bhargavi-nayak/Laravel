@@ -24,14 +24,14 @@ Route::get('/logins', 'Users1Controller@index');
 Route::post('/logging', 'Users1Controller@store');
 Route::get('/register_please', 'Users1Controller@create');
 Route::post('/registration_process', 'Users1Controller@store1');
-//Route::get('/notices1', 'NoticeController@index1');
-//Route::get('/notices2', 'NoticeController@index2');
-//Route::get('/notices3/{id}', 'NoticeController@index3');
-//Route::get('/notices4', 'NoticeController@index4');
-//Route::get('/notices5', 'NoticeController@index5');
-//Route::get('/notices6', 'NoticeController@index6');
-//Route::get('/notices7', 'NoticeController@index7');
-//Route::get('/notices8', 'NoticeController@index8');
+Route::get('/notices1', 'NoticeController@index1');
+Route::get('/notices2', 'NoticeController@index2');
+Route::get('/notices3/{id}', 'NoticeController@index3');
+Route::get('/notices4', 'NoticeController@index4');
+Route::get('/notices5', 'NoticeController@index5');
+Route::get('/notices6', 'NoticeController@index6');
+Route::get('/notices7', 'NoticeController@index7');
+Route::get('/notices8', 'NoticeController@index8');
 Route::get('/profile/{id}','Users1Controller@profile');
 Route::post('/update_user/{id}','Users1Controller@update');
 Route::get('/logout', function () {
@@ -50,7 +50,6 @@ Route::post('/display_admin', 'AdminsController@store');
 
 Route::post('/admin_login', 'AdminsController@store1');
 Route::get('/admin_login1', 'AdminsController@index2');
-Route::get('/admin_home/{dept}', 'AdminsController@show3');
 Route::get('/profile_admin/{id}','AdminsController@profile');
 Route::post('/update_admin/{id}','AdminsController@update');
 Route::get('/logout1', function () {
@@ -60,7 +59,7 @@ Route::get('/logout1', function () {
 
 //for notices
 Route::get('/news_add/{id}','AdminsController@show4');
-Route::post('/notice_store/{id}','NoticeController@store');
+Route::post('/notice_store','NoticeController@store');
 Route::get('/notices_general','NoticeController@show');
 Route::get('/notices_dept/{id}','Users1Controller@show1');
 Route::post('/dept_notice/{dept}','NoticeController@show1');
