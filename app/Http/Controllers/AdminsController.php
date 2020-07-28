@@ -16,60 +16,9 @@ class AdminsController extends Controller
     public function index()
     {
         //
-         return view('admin_login');
-    }
-
-
-
-
-
-    public function store1(Request $request)
-{
-   //validate
-   $validatedData = $request->validate([
-    //'name' => 'required|max:255',
-    'loginid' => 'required',
-    'pass' => 'required',
-]);
-
-//get the email entered form login page
-$loginid=$request['loginid'];
-$password=$request['pass'];
-//echo "the loginid and password entered are $loginid $password</br>";
-$admin = DB::table('admins')->where('admin_id', $loginid)->first();
-if($admin){
-    //echo "the loginid and password extracted from entered loginid $user->email $user->password </br>";
-    if($loginid===$admin->admin_id && $password===$admin->password){
-        //echo "email id and password match in db</br>";
-        echo "<script> alert('Welcome $admin->name');</script>";
-        return view('admin_loggedin',['id'=>"$admin->id"]);
-    }
-    else{
-        echo "<script>alert('emailid and password do not match');</script>";
         return view('admin_login');
     }
-}
-else{
-    echo "<script>alert('user doesnt exist');</script>";
-    return view('admin_login');
-} 
-
-}
-
-
-
-
-
-
-
- public function profile($id)
-    {
-        //
-        return view('profile_admin',['id'=>$id]);
-    }
-
-
-
+    
 
     /**
      * Show the form for creating a new resource.
@@ -79,7 +28,7 @@ else{
     public function create()
     {
         //
-          return view('input_admin');
+        return view('input_admin');
     }
 
     /**
@@ -91,6 +40,10 @@ else{
     public function store(Request $request)
     {
         //
+        //return $request;
+        //
+        //return($request);
+        //validate
         $validatedData = $request->validate([
             'name' => 'required|max:255',
             'admin_id'=>'required|max:20',
@@ -160,58 +113,98 @@ else{
             echo "<a href='/admin_create'>Go to register</a>";
         }  
     }
-
-public function show4(admins $admins,$id)
-    {
-        //
-
-        $admins=admins::find($id);
-        $department=$admins->Department;
-        return view("notice",['department'=>"$department"],['id'=>"$id"]);
-
-    }
-
-
-public function show2(admins $admins,$id)
-    {
-        //
-
-        $admins=admins::find($id);
-        $department=$admins->Department;
-        return view("update_notice",['department'=>"$department"],['id'=>"$id"]);
-
-    }
-
-public function back($id)
+public function store1(Request $request)
 {
-  return view("admin_loggedin",["id"=>$id]);
-}
+   //validate
+   $validatedData = $request->validate([
+    //'name' => 'required|max:255',
+    'loginid' => 'required',
+    'pass' => 'required',
+]);
 
+//get the email entered form login page
+$loginid=$request['loginid'];
+$password=$request['pass'];
+//echo "the loginid and password entered are $loginid $password</br>";
+$admin = DB::table('admins')->where('admin_id', $loginid)->first();
+if($admin){
+    //echo "the loginid and password extracted from entered loginid $user->email $user->password </br>";
+    if($loginid===$admin->admin_id && $password===$admin->password){
+        //echo "email id and password match in db</br>";
+        echo "<script> alert('Welcome $admin->name');</script>";
+        return view('admin_loggedin',['id'=>"$admin->id"]);
+    }
+    else{
+        echo "<script>alert('emailid and password do not match');</script>";
+        return view('admin_login');
+    }
+}
+else{
+    echo "<script>alert('user doesnt exist');</script>";
+    return view('admin_login');
+} 
+
+}
     /**
      * Display the specified resource.
      *
-     * @param  \App\admins  $admin
+     * @param  \App\admins  $admins
      * @return \Illuminate\Http\Response
      */
+
+    public function profile($id)
+    {
+        //
+        return view('profile_admin',['id'=>$id]);
+    }
+
     public function show(admins $admins)
     {
         //
-           $user=$admins::all();
+        $user=$admins::all();
         return view('adminss',["users"=>$user]);
     }
-    public function show3(admins $admins,$dept)
+    public function show2(admins $admins,$id)
     {
         //
-        $admin=admins::where('Department',$dept)->get();
-        $id=$admin->id;
-        return view('admin_loggedin',["id"=>$id]);
+
+        $admins=admins::find($id);
+        $department=$admins->Department;
+        return view("update_notice",['department'=>"$department"]);
+
+       
+
+        
     }
 
+    public function show3(admins $admins,$id)
+    {
+        //
 
+        $admins=admins::find($id);
+        $department=$admins->Department;
+        return view("view_complaints",['department'=>"$department"]);
+
+       
+
+        
+    }
+    public function show4(admins $admins,$id)
+    {
+        //
+
+        $admins=admins::find($id);
+        $department=$admins->Department;
+        return view("notice",['department'=>"$department"]);
+
+       
+
+        
+    }
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\admins  $admin
+     * @param  \App\admins  $admins
      * @return \Illuminate\Http\Response
      */
     public function edit(admins $admins)
@@ -226,10 +219,10 @@ public function back($id)
      * @param  \App\admins  $admins
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$users1_id)
+    public function update(Request $request, $users1_id)
     {
         //
-         $users1=admins::find($users1_id);
+        $users1=admins::find($users1_id);
         $users1->name=$request->name;
         $users1->email=$request->email;
         $users1->password=$request->password;
@@ -239,37 +232,12 @@ public function back($id)
         $users1->save();
         echo "<script>alert('Profile Updation complete $request->name');</script>";
         return view('admin_loggedin',['id'=>$users1->id]);
-
-    }
-public function show3(admins $admins,$id)
-    {
-        //
-
-        $admins=admins::find($id);
-        $department=$admins->Department;
-        if($admins)
-        {
-            return view("view_complaints",['department'=>"$department"],['id'=>"$id"]);
-        }
-        else
-            return redirect()->route('/admin_loggedin')->with(['message' => 'Wrong ID!!']);
-        
-
-    }
-    public function home1(admins $admins,$id)
-    {
-        //
-
-        $admins=admins::find($id);
-        $department=$admins->Department;
-        return view("view_complaints",['department'=>"$department"]);
-
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\admins  $admin
+     * @param  \App\admins  $admins
      * @return \Illuminate\Http\Response
      */
     public function destroy(admins $admins,$id)
@@ -277,8 +245,6 @@ public function show3(admins $admins,$id)
         //
 
         admins::find($id)->delete();
-
-        echo "<script>alert('Record deleted successfully')</script>";
-        return redirect('/adminss');
+        echo "Record deleted successfully";
     }
 }

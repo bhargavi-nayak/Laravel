@@ -67,7 +67,7 @@ class Users1Controller extends Controller
         }
         else{
             echo "<script>alert('Passwords dont Match');</script>";
-            echo "<a href='/register_please'>Go to register</a>";
+            echo "<a href='/register'>Go to register</a>";
         }  
     }
 

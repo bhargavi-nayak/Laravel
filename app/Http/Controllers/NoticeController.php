@@ -40,7 +40,7 @@ class NoticeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request,$id)
+    public function store(Request $request)
     {
         //
 
@@ -58,7 +58,6 @@ class NoticeController extends Controller
         $notice->department=$request->dept;
         $notice->images=$request->image;
         $notice->links=$request->link;
-        $department=$notice->department;
         $notice->save();
         echo "<script>alert('Notice updated successfully');</script>";
         echo '<head>
@@ -97,11 +96,7 @@ class NoticeController extends Controller
         }
         </style>
         </head>';
-       
-        return view("Go Home",['department'=>"$department"],['id'=>"$id"]);
         echo "<div class='col-sm-4'></div></div></div>";
-        
-        
 
         }
     

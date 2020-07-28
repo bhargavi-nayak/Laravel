@@ -15,7 +15,7 @@ class ComplaintController extends Controller
     public function index()
     {
         //
-        return view('complaint_form');
+        return view('/complaint_form');
     }
 
     /**
